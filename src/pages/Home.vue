@@ -1,13 +1,12 @@
 <template>
-  <div>Home</div>
+    <h1>Home {{ x }},{{ y }}</h1>
 </template>
 
-<script>
-export default {
-  name: "about"
-}
+<script setup>
+// vue-use
+import { useMouse } from '@vueuse/core';
+
+const { x, y } = useMouse();
 </script>
 
-<style scoped>
-
-</style>
+<style scoped lang="less"></style>

@@ -1,13 +1,7 @@
 <template>
-  <div>About</div>
+    <div>About</div>
 </template>
 
-<script>
-export default {
-  name: "About"
-}
-</script>
+<script setup></script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

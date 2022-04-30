@@ -1,26 +1,30 @@
-import {
-    createRouter,
-    createWebHashHistory,
-} from 'vue-router'
-import Home from '../pages/Home.vue'
-import About from '../pages/About.vue'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
     {
-        path: '/',
-        name: 'Home',
-        component: Home
+        path: '/About',
+        name: 'About',
+        meta: {
+            title: 'About',
+            keepAlive: true,
+            requireAuth: false,
+        },
+        component: () => import('@/pages/About.vue'),
     },
     {
-        path: '/about',
-        name: 'About',
-        component: About
-    }
-]
+        path: '/',
+        name: 'Index',
+        meta: {
+            title: '首页',
+            keepAlive: true,
+            requireAuth: true,
+        },
+        component: () => import('@/pages/Home.vue'),
+    },
+];
 
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes
-})
-
-export default router
+    history: createWebHistory(),
+    routes,
+});
+export default router;
